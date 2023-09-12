@@ -5,7 +5,8 @@
 /*
  * main -Entry point of the program
  *
- * This programs generates a random number, zero negative or positive.
+ * Description:
+ * This programs generates a random number, zero ,negative or positive.
  * and prints the result
  *
  * Return (0) to indicate success
@@ -22,11 +23,11 @@
 	{
 	printf("%d is positive\n", n);
 	}
-	if (n == 0)
+	else if (n == 0)
 	{
 	printf("%d is zero\n", n);
 	}
-	else if (n < 0)
+	else  (n < 0)
 	{
 	printf("%d is negative\n", n);
 	}
