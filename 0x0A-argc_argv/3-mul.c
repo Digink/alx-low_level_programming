@@ -1,47 +1,32 @@
 #include <stdio.h>
-#include "main.h"
+#include <stdlib.h>
+#include "holberton.h"
 
 /**
- * _atoi - Converts a string to an integer.
- * @s: String to be converted.
- *
- * Return: The int converted from the string.
+ * main - Program that takes first two integer arguments and prints the product
+ * @argc: Number of command line arguments
+ * @argv: Array name
+ * Return: 1 if not enough arguments passed in, 0 otherwise
  */
-int _atoi(char *s)
+
+int main(int argc, char *argv[])
 {
-	int i, d, n, len, f, digit;
+	int i, j;
 
-	i = 0;
-	d = 0;
-	n = 0;
-	len = 0;
-	f = 0;
-	digit = 0;
-
-	while (s[len] != '\0')
-		len++;
-
-	while (i < len && f == 0)
+	if (argc == 1 || argc == 2)
 	{
-		if (s[i] == '-')
-			++d;
+		printf("Error\n");
+		return (1);
+	}
+	else
+	{
+		j = 1;
 
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			digit = s[i] - '0';
-			if (d % 2)
-				digit = -digit;
-			n = n * 10 + digit;
-			f = 1;
-			if (s[i + 1] < '0' || s[i + 1] > '9')
-				break;
-			f = 0;
-		}
-		i++;
+		for (i = 1; i < 3; i++)
+			j *= atoi(argv[i]);
+
+		printf("%d\n", j);
 	}
 
-	if (f == 0)
-		return (0);
-
-	return (n);
+	return (0);
 }
